@@ -35,11 +35,11 @@ public class NewsAdapter extends ArrayAdapter<Posts> {
         Posts posts = postsList.get(position);
         //header_image
         ImageView headerImage=(ImageView) view.findViewById(R.id.header_image);
-      String imageurl=posts.getBetterFeaturedImage();
+      String imageurl=posts.getBetterFeaturedImage().getSourceUrl();
      //   String imageurl=posts.getFeaturedImage().getFeaturedImage().getAttachmentMeta().getFile();
       //  String imageurl="http://kamwegawritings.com/wp-content/uploads/2015/10/gabrielle-union-by-jeff-lipsky-for-glamour-february-2014-1.jpg";
         Picasso.with(view.getContext())
-                .load(posts.getBetterFeaturedImage())
+                .load(posts.getBetterFeaturedImage().getSourceUrl())
                 .placeholder(R.drawable.ic_camera_grey)// optional
                 .error(R.drawable.ic_camera_grey)     // optional
                       //  .resize(600, 150)                        // optional

@@ -33,10 +33,10 @@ allprojects {
     }
     project.ext {
         myBuildToolsVersion = "25.0.2"
-        mySupportLibraryVersion = "25.1.1"
-        myMinSdkVersion = 15
-        myTargetSdkVersion = 25
-        myCompileSdkVersion = 25
+        mySupportLibraryVersion = "27.1.1"
+        myMinSdkVersion = 16
+        myTargetSdkVersion = 27
+        myCompileSdkVersion = 27
         // TODO all com.google.android.gms must use the same version
         comGoogleGmsVersion = '11.0.0'
         mqttClientVersion = '1.1.0'

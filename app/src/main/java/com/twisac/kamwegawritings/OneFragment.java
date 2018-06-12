@@ -15,20 +15,24 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.stone.vega.library.VegaLayoutManager;
 import com.twisac.kamwegawritings.adapter.NewsRealAdapter;
 import com.twisac.kamwegawritings.components.AlertPopup;
 import com.twisac.kamwegawritings.egaview.RecyclerItemClickListener;
 import com.twisac.kamwegawritings.interfaces.RecycConnector;
 import com.twisac.kamwegawritings.jsonpojo.Posts;
-import com.twisac.kamwegawritings.jsonpojo.Posts2;
 import com.twisac.kamwegawritings.retrofitdata.NewsApi;
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.Interceptor;
@@ -81,7 +85,6 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
     NewsRealAdapter adapter;
     //  HeaderAdapter adapter2;
     RecyclerView rv;
-    RecyclerView rv2;
     FloatingActionButton fab;
     Cache cache;
     int ty=0;
@@ -89,7 +92,7 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
     private RecyclerView.Adapter mAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     List<Posts> postsList;
-    List<Posts2> postsList2;
+  //  List<Posts> postsList2;
     ConnectivityManager cn;
     NetworkInfo nf;
     boolean success = true;
@@ -159,7 +162,11 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
         callAsynchronousTask();
         rv = (RecyclerView)rootView.findViewById(R.id.rv);
         rv.setHasFixedSize(true);
+     //   rv.setLayoutManager(new VegaLayoutManager());
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        LayoutAnimationController animationController = AnimationUtils.loadLayoutAnimation(getContext(),R.anim.layout_slide_from_bottom);
+        rv.setLayoutAnimation(animationController);
         //rv.addItemDecoration(new DividerItemDecoration(getActivity(),LinearLayoutManager.VERTICAL));
         //   AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(adapter);
         //   alphaAdapter.setDuration(1000);
@@ -266,6 +273,7 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
                 fab.show();
                 success = true;
                 btn_try.setVisibility(View.GONE);
+                rv.scheduleLayoutAnimation();
 
 
             }
@@ -273,6 +281,8 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
             @Override
             public void failure(RetrofitError error) {
                 // stopping swipe refresh
+
+             //   Log.d("NETERROR",error.getResponse().getReason());
                 swipeRefreshLayout.setRefreshing(false);
                 success= false;
                 btn_try.setVisibility(View.VISIBLE);
@@ -308,10 +318,12 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
             @Override
             public void success(List<Posts> posts, Response response) {
                 // stopping swipe refresh
+             //   Toast.makeText(getActivity(), "YES", Toast.LENGTH_LONG).show();
                 swipeRefreshLayout.setRefreshing(false);
                 postsList = posts;
 
                 adapter = new NewsRealAdapter(getActivity(), postsList,rv);
+
 
 
                 rv.setAdapter(adapter);
@@ -321,6 +333,7 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
                     textView.setVisibility(View.GONE);
                     imageLoading.setVisibility(View.GONE);
                 }
+                rv.scheduleLayoutAnimation();
                 adapter.setOnLoadMoreListener(new RecycConnector.OnLoadMoreListener() {
                     @Override
                     public void onLoadMore() {
@@ -335,7 +348,7 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
                                 String postContent = postsList.get(position).getContent().getRendered();
                                 String postCategory = postsList.get(position).getAuthormeta().getCategories();
                                 String postTitle = postsList.get(position).getTitle().getRendered();
-                                String featuredImage = postsList.get(position).getBetterFeaturedImage();
+                                String featuredImage = postsList.get(position).getBetterFeaturedImage().getSourceUrl();
                                 String postDate = postsList.get(position).getDate();
                                 String postExcerpt = postsList.get(position).getExcerpt().getRendered();
                                 String postLink = postsList.get(position).getLink();
@@ -372,7 +385,8 @@ public class OneFragment extends Fragment implements SwipeRefreshLayout.OnRefres
             public void failure(RetrofitError error) {
                 // stopping swipe refresh
                 swipeRefreshLayout.setRefreshing(false);
-                //  Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
+               //   Toast.makeText(getActivity(), error.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+              //  Log.d("NETERROR",error.getLocalizedMessage());
                 if (adapter == null) {
                     textView.setVisibility(View.VISIBLE);
                     textView.setText("Opps! Please Check Your Internet Connection");

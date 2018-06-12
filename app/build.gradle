@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
         compileSdkVersion project.ext.myCompileSdkVersion
-        buildToolsVersion project.ext.myBuildToolsVersion
+//        buildToolsVersion project.ext.myBuildToolsVersion
 
     defaultConfig {
         applicationId "com.egaficsoftwares.kamwegawritings"
         minSdkVersion project.ext.myMinSdkVersion
         targetSdkVersion project.ext.myTargetSdkVersion
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.3"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -27,6 +27,11 @@ android {
     dexOptions {
 
         jumboMode = true
+    }
+    // Keep the following configuration in order to target Java 8.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -64,6 +69,7 @@ dependencies {
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
 
     compile 'org.jsoup:jsoup:1.10.2'
+    compile 'com.stone.vega.library:VegaLayoutManager:1.0.1'
 
 
 }

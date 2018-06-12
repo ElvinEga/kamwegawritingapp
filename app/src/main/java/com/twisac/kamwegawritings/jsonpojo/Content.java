@@ -1,27 +1,32 @@
 
 package com.twisac.kamwegawritings.jsonpojo;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Content {
 
+    @SerializedName("rendered")
+    @Expose
     private String rendered;
+    @SerializedName("protected")
+    @Expose
+    private Boolean _protected;
 
-    /**
-     * 
-     * @return
-     *     The rendered
-     */
     public String getRendered() {
         return rendered;
     }
 
-    /**
-     * 
-     * @param rendered
-     *     The rendered
-     */
     public void setRendered(String rendered) {
         this.rendered = rendered;
+    }
+
+    public Boolean getProtected() {
+        return _protected;
+    }
+
+    public void setProtected(Boolean _protected) {
+        this._protected = _protected;
     }
 
 }

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.twisac.kamwegawritings.R;
-import com.twisac.kamwegawritings.jsonpojo.Posts2;
+import com.twisac.kamwegawritings.jsonpojo.Posts;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -23,16 +23,16 @@ import java.util.List;
  * Created by Elvin Ega on 10/30/2015.
  */
 public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.ViewHolder> {
-    private List<Posts2> mPosts;
+    private List<Posts> mPostss;
     Context context;
-    public HeaderAdapter(Context context, List<Posts2> objects){
+    public HeaderAdapter(Context context, List<Posts> objects){
         //super(context, resource, objects);
         this.context = context;
-        this.mPosts= objects;
+        this.mPostss= objects;
 
     }
     public void clear() {
-        mPosts.clear();
+        mPostss.clear();
         notifyDataSetChanged();
     }
 
@@ -61,12 +61,12 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-   Posts2 posts=mPosts.get(position);
+   Posts Postss=mPostss.get(position);
         //imge
         ImageView headerImage=holder.headerImage;
-        String imageurl=posts.getBetterFeaturedImage();
+        String imageurl=Postss.getBetterFeaturedImage().getSourceUrl();
         Picasso.with(context)
-                .load(posts.getBetterFeaturedImage())
+                .load(Postss.getBetterFeaturedImage().getSourceUrl())
                 .placeholder(R.drawable.kwback)// optional
                 .error(R.drawable.kwback)     // optional
                         //  .resize(600, 150)                        // optional
@@ -74,7 +74,7 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.ViewHolder
                         // optional
                 .fit().centerCrop().into(headerImage);
         TextView txtTitle=holder.textTopic;
-        txtTitle.setText(posts.getTitle().getRendered());
+        txtTitle.setText(Postss.getTitle().getRendered());
 
 
 
@@ -90,7 +90,7 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.ViewHolder
     }
     @Override
     public int getItemCount() {
-        return mPosts.size();
+        return mPostss.size();
     }
     private String getDate(String timeStamp) {
 //2015-11-09T21:53:42

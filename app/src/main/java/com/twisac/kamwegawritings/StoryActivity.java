@@ -31,6 +31,7 @@ import android.widget.LinearLayout;
 import com.twisac.kamwegawritings.adapter.CommentAdapter;
 import com.twisac.kamwegawritings.adapter.StoryAdapter;
 import com.twisac.kamwegawritings.components.AlertPopup;
+import com.twisac.kamwegawritings.components.Constant;
 import com.twisac.kamwegawritings.jsonpojo.comments.Comment;
 import com.twisac.kamwegawritings.kamwegadb.AppDataStore;
 import com.twisac.kamwegawritings.kamwegadb.Post;
@@ -127,7 +128,7 @@ fabShare.setOnClickListener(new View.OnClickListener() {
         Spanned htmlAsSpanned = Html.fromHtml(POST_EXCERPT);
         String sExcerpt = htmlAsSpanned.toString();
 
-        String sSend = POST_TITLE + "\n" + sExcerpt + "\n" + POST_LINK + "\n" + "sent Via KamwegaWritings App";
+        String sSend = POST_TITLE + "\n" + sExcerpt + "\n" + POST_LINK + "\n" + "sent Via KamwegaWritings App"+ "\n"+new Constant().PLAYSTORE_LINK;
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, POST_TITLE);

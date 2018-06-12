@@ -132,9 +132,9 @@ public class NewsRealAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         //imge
         if (holder instanceof PostViewHolder) {
             ImageView headerImage = ((PostViewHolder) holder).headerImage;
-            String imageurl = posts.getBetterFeaturedImage();
+            String imageurl = posts.getBetterFeaturedImage().getSourceUrl();
             Picasso.with(context)
-                    .load(posts.getBetterFeaturedImage())
+                    .load(posts.getBetterFeaturedImage().getSourceUrl())
                     .placeholder(R.drawable.kwback)// optional
                     .error(R.drawable.kwback)     // optional
                             //  .resize(600, 150)                        // optional

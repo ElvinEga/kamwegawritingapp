@@ -236,7 +236,7 @@ swipeRefreshLayout.setOnRefreshListener(this);
                             public void onItemClick(View view, int position) {
                                 String postContent = postsList.get(position).getContent().getRendered();
                                 String postTitle = postsList.get(position).getTitle().getRendered();
-                                String featuredImage = postsList.get(position).getBetterFeaturedImage();
+                                String featuredImage = postsList.get(position).getBetterFeaturedImage().getSourceUrl();
                                 String postDate = postsList.get(position).getDate();
                                 String postExcerpt = postsList.get(position).getExcerpt().getRendered();
                                 String postLink = postsList.get(position).getLink();

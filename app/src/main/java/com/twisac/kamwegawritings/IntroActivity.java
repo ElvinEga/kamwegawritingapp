@@ -17,6 +17,15 @@ public class IntroActivity extends AppIntro {
     SharedPreferences sharedPreferences;
     @Override
     public void init(Bundle savedInstanceState) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+      // sharedPreferences.getBoolean("intro",false);
+
+       if(sharedPreferences.getBoolean("intro",false)){
+           Intent i = new Intent(getApplicationContext(), MainActivity.class);
+           i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+           startActivity(i);
+           finish();
+       }
 
         //adding the three slides for introduction app you can ad as many you needed
         addSlide(AppIntroFragment.newInstance(R.layout.app_intro1));

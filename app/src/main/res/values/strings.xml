@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KamwegaWritings</string>
+    <string name="app_name">Kamwega Writings</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -23,8 +23,8 @@
        " Kamwegawritings is a blog app by Kamwegawritings.com . The writer captures life using doodles that are witty and downright hilarious. You will see yourself in the conversations that she uses in the posts.." </string>
     <string name="about_txt2">
 
-        Copyright  2017
-        Powered By Egafic
+        Copyright  2018
+        Powered By Egafic Inc
 
 
     </string>

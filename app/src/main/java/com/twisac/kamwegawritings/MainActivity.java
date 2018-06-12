@@ -24,10 +24,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
 
 import com.twisac.kamwegawritings.adapter.HeaderAdapter;
-import com.twisac.kamwegawritings.jsonpojo.Posts2;
+import com.twisac.kamwegawritings.components.Constant;
+import com.twisac.kamwegawritings.jsonpojo.Posts;
 import com.twisac.kamwegawritings.retrofitdata.NewsApi;
 import com.twisac.kamwegawritings.wizard.WizardActivity;
 import com.squareup.okhttp.Cache;
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     RestAdapter restadapter2;
     OkHttpClient okHttpClient;
     RecyclerView rv2;
-    List<Posts2> postsList2 = new ArrayList<>();
+    List<Posts> postsList2 = new ArrayList<>();
     Cache cache;
     private static long SIZE_OF_CACHE =10 * 1024 * 1024;// 10MB
     private static final String ENDPOINT = "http://207.246.120.170/kamwega/";
@@ -130,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
         //   alphaAdapter.setDuration(1000);
 
         rv2.setAdapter(adapter2);
+        LayoutAnimationController animationController = AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_slide_from_right);
+        rv2.setLayoutAnimation(animationController);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -165,6 +170,14 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent3 = new Intent(getApplicationContext(), OfflineActivity.class);
                         startActivity(intent3);
                         // return true;
+                        break;
+                    case R.id.nav_share_app:
+                      String share =  "Download the Kamwega Writings App" + "\n" + "sent Via Kamwega Writings App "+ "\n\n"+ new Constant().PLAYSTORE_LINK;
+                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Download the kamwega app");
+                        shareIntent.putExtra(Intent.EXTRA_TEXT, share);
+                        shareIntent.setType("text/plain");
+                        startActivity(Intent.createChooser(shareIntent, "Share Via"));
                         break;
                     case R.id.navigation_home:
 
@@ -292,18 +305,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         NewsApi newsApi = restadapter2.create(NewsApi.class);
-        newsApi.getHeader(new Callback<List<Posts2>>() {
+        newsApi.getHeader(new Callback<List<Posts>>() {
             @Override
-            public void success(List<Posts2> posts2, Response response) {
+            public void success(List<Posts> Posts, Response response) {
 
 
-                postsList2 = posts2;
+                postsList2 = Posts;
 
                 adapter2 = new HeaderAdapter(MainActivity.this, postsList2);
+
                 adapter2.notifyDataSetChanged();
 
 
                 rv2.setAdapter(adapter2);
+                rv2.scheduleLayoutAnimation();
                 appBarLayout.setExpanded(true);
                 TimerTask task = new TimerTask() {
                     @Override

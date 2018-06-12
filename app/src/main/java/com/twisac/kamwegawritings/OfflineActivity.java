@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.twisac.kamwegawritings.components.Constant;
 import com.twisac.kamwegawritings.wizard.WizardActivity;
 
 import java.util.ArrayList;
@@ -88,6 +89,14 @@ public class OfflineActivity extends AppCompatActivity {
                         startActivity(homeIntent);
                         finish();
                         return true;
+                    case R.id.nav_share_app:
+                        String share =  "Download the Kamwega Writings App" + "\n" + "sent Via Kamwega Writings App "+ "\n\n"+ new Constant().PLAYSTORE_LINK;
+                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Download the kamwega app");
+                        shareIntent.putExtra(Intent.EXTRA_TEXT, share);
+                        shareIntent.setType("text/plain");
+                        startActivity(Intent.createChooser(shareIntent, "Share Via"));
+                        break;
                 }
                 return true;
             }
