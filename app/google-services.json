@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "144145595903",
+    "firebase_url": "https://kamwegawritings.firebaseio.com",
+    "project_id": "kamwegawritings",
+    "storage_bucket": "kamwegawritings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144145595903:android:5ce44e60882416e8",
+        "android_client_info": {
+          "package_name": "com.kamwegaw.egaficsoftwares.kamwegawritings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144145595903-t1ghvt2bir89hslqpomlvan7b753e7en.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kamwegaw.egaficsoftwares.kamwegawritings",
+            "certificate_hash": "678d50329ff001f992243bdd7cac109c54ca46f3"
+          }
+        },
+        {
+          "client_id": "144145595903-97ohtqldi5ab0rghbpgb4b6m7sfg28fp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgw9Iwns3urE1hGJ3Lnk3ZlMc9z6T4OC8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144145595903-97ohtqldi5ab0rghbpgb4b6m7sfg28fp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

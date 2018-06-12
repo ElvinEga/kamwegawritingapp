@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="16dp"
+card_view:cardCornerRadius="2dp"
+card_view:cardBackgroundColor="@color/white"
+card_view:cardElevation="2dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="This Is The Title"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:id="@+id/textTitle"
+        android:textColor="@color/textLabel"
+        android:textStyle="bold"
+        android:textSize="21sp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_tag"
+            android:padding="3dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIVING"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:id="@+id/textcat"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textStyle="normal|bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_action_clock"
+            android:tint="@color/colorPrimaryDarkest"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="4sp"
+            android:id="@+id/imageView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15/11/2015 7:14 PM"
+            android:textColor="@color/textHint"
+            android:layout_gravity="center_vertical"
+            android:textSize="12sp"
+            android:id="@+id/textDate" />
+</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="4dp"
+            android:layout_gravity="center_vertical|right"
+            card_view:srcCompat="@drawable/ic_comments"
+            android:visibility="gone"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:textColor="@color/textHint"
+            android:visibility="gone"
+            android:text="22 comments"
+            android:textSize="12sp"
+            android:id="@+id/txtComments"/>
+            </LinearLayout>
+        </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/webView" />
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txt_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/textLabel"/>
+
+
+
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>

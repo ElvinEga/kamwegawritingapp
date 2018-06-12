@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">KamwegaWritings</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="one">One</string>
+    <string name="two">Favourite</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+
+
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="categories">Categories</string>
+    <string name="privacy_policy">Privacy Policy And Help</string>
+    <string name="about_us">About Us</string>
+
+    <string name="other">Other</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="share_app">Share App</string>
+
+    <string name="about_txt">"Kamwegawritings App.\n\n"
+       " Kamwegawritings is a blog app by Kamwegawritings.com . The writer captures life using doodles that are witty and downright hilarious. You will see yourself in the conversations that she uses in the posts.." </string>
+    <string name="about_txt2">
+
+        Copyright  2017
+        Powered By Egafic
+
+
+    </string>
+
+    <string name="action_ASV">ASV</string>
+    <string name="action_KJV">KJV</string>
+    <string name="action_Webster">Webster</string>
+    <string name="action_World_English">World English</string>
+    <string name="next_chapter">Next Chapter</string>
+    <string name="previous_chapter">Previous Chapter</string>
+    <string name="search_chapter">Jump to Chapter</string>
+</resources>

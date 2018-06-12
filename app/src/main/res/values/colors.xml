@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2ecc71</color>
+    <color name="colorPrimaryDark">#38CF56</color>
+    <color name="colorPrimaryDarkest">#27ae60</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#2ecc71</color>
+    <color name="colorAccent">#f1c40f</color>
+    <color name="colorBack">#f1c40f</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+
+    <color name="transparentColor">#00ffffff</color>
+
+    <color name="orange">#ff7700</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#e74c3c</color>
+    <color name="green">#2ecc71</color>
+    <color name="blue">#3498db</color>
+    <color name="yyy">#eeeeee</color>
+    <color name="grey">#cdcdcd</color>
+
+
+    <color name="textHint">#95a5a6</color>
+    <color name="textHintDark">#7f8c8d</color>
+    <color name="textLabel">#34495e</color>
+    <color name="textLabelDark">#2c3e50</color>
+    <color name="textLabelBlue">#2c3e50</color>
+
+    <color name="navTextLabel">#f5f6fa</color>
+    <color name="navTextLabelDark">#f1f2f6</color>
+</resources>

@@ -1,0 +1,101 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="42sp"
+            android:text="NAVIGATION BAR"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="86dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/textView"
+            android:id="@+id/linearLayout3">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="15sp"
+                android:text="Use this to explore and navigate through the various categories the app provides."
+                android:textColor="@color/white"
+                android:id="@+id/textView2" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:src="@drawable/phone2"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/view2"
+            android:layout_below="@+id/linearLayout3" />
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/view2">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                >
+                <Button android:layout_height="20dp" android:layout_width="20dp"
+                    android:id="@+id/btn1"
+
+
+                    android:background="@drawable/round_cell2"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+                <Button android:layout_height="20dp" android:layout_width="20dp"
+                    android:id="@+id/btn2"
+
+
+                    android:background="@drawable/round_cell"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/btn1"
+                    android:layout_toEndOf="@+id/btn1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp" />
+                <Button android:layout_height="20dp" android:layout_width="20dp"
+                    android:id="@+id/btn3"
+
+
+                    android:background="@drawable/round_cell2"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/btn1"
+                    android:layout_toStartOf="@+id/btn1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp" />
+
+            </RelativeLayout>
+        </android.support.design.widget.AppBarLayout>
+
+
+
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
