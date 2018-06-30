@@ -1,5 +1,5 @@
 
-package com.twisac.kamwegawritings.jsonpojo.comments;
+package com.twisac.kamwegawritings.jsonpojo.comment;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

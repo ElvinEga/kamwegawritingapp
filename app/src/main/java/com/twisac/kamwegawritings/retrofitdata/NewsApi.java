@@ -1,8 +1,8 @@
 package com.twisac.kamwegawritings.retrofitdata;
 
 import com.twisac.kamwegawritings.jsonpojo.Posts;
-import com.twisac.kamwegawritings.jsonpojo.Posts;
-import com.twisac.kamwegawritings.jsonpojo.comments.Comment;
+import com.twisac.kamwegawritings.jsonpojo.category.Category;
+import com.twisac.kamwegawritings.jsonpojo.comment.Comment;
 
 import java.util.List;
 
@@ -21,8 +21,10 @@ public interface NewsApi {
     public void getHeader(Callback<List<Posts>> response);
     @GET("/wp-json/wp/v2/posts")
     public void getPost(@Query("filter[name]") String postUrl,Callback<List<Posts>> response);
-
     @GET("/wp-json/wp/v2/comments")
     public void getComments(@Query("post") int post_id,Callback<List<Comment>> response);
+    @GET("/wp-json/wp/v2/categories")
+    public void getCategories(Callback<List<Category>> response);
+
 
 }

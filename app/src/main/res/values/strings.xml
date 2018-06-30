@@ -20,7 +20,7 @@
     <string name="share_app">Share App</string>
 
     <string name="about_txt">"Kamwegawritings App.\n\n"
-       " Kamwegawritings is a blog app by Kamwegawritings.com . The writer captures life using doodles that are witty and downright hilarious. You will see yourself in the conversations that she uses in the posts.." </string>
+       " God is great, beer is good and people are crazy. Life is a story...read mine. Life, people, places, and things." </string>
     <string name="about_txt2">
 
         Copyright  2018
@@ -36,4 +36,5 @@
     <string name="next_chapter">Next Chapter</string>
     <string name="previous_chapter">Previous Chapter</string>
     <string name="search_chapter">Jump to Chapter</string>
+    <string name="title_activity_categories">CategoriesActivity</string>
 </resources>

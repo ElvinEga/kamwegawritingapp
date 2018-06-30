@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.twisac.kamwegawritings.R;
-import com.twisac.kamwegawritings.jsonpojo.comments.Comment;
+import com.twisac.kamwegawritings.jsonpojo.comment.Comment;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;

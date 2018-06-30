@@ -161,11 +161,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent2);
                         // return true;
                         break;
-                /*    case R.id.navigation_bible:
-                        Intent intent4 = new Intent(getApplicationContext(), com.church.egaficsoftwares.churchapp.bible.MainActivity.class);
-                        startActivity(intent4);
+                    case R.id.navigation_categories:
+                        Intent intentCat = new Intent(getApplicationContext(), CategoriesActivity.class);
+                        startActivity(intentCat);
                         // return true;
-                        break;*/
+                        break;
                     case R.id.navigation_offline:
                         Intent intent3 = new Intent(getApplicationContext(), OfflineActivity.class);
                         startActivity(intent3);

@@ -6,8 +6,12 @@
             android:icon="@drawable/ic_home"
             android:title="@string/home"/>
         <item
+            android:id="@+id/navigation_categories"
+            android:icon="@drawable/ic_category"
+            android:title="Categories"/>
+        <item
             android:id="@+id/navigation_offline"
-            android:icon="@drawable/ic_bookmark"
+            android:icon="@drawable/ic_archive"
             android:title="@string/favourite"/>
         <item
             android:id="@+id/navigation_pref"

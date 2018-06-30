@@ -32,7 +32,7 @@ import com.twisac.kamwegawritings.adapter.CommentAdapter;
 import com.twisac.kamwegawritings.adapter.StoryAdapter;
 import com.twisac.kamwegawritings.components.AlertPopup;
 import com.twisac.kamwegawritings.components.Constant;
-import com.twisac.kamwegawritings.jsonpojo.comments.Comment;
+import com.twisac.kamwegawritings.jsonpojo.comment.Comment;
 import com.twisac.kamwegawritings.kamwegadb.AppDataStore;
 import com.twisac.kamwegawritings.kamwegadb.Post;
 import com.twisac.kamwegawritings.retrofitdata.NewsApi;

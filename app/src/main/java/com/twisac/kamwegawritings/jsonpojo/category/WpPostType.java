@@ -1,10 +1,10 @@
 
-package com.twisac.kamwegawritings.jsonpojo.comments;
+package com.twisac.kamwegawritings.jsonpojo.category;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Self {
+public class WpPostType {
 
     @SerializedName("href")
     @Expose

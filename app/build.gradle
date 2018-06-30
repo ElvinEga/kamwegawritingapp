@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-        compileSdkVersion project.ext.myCompileSdkVersion
+    compileSdkVersion project.ext.myCompileSdkVersion
 //        buildToolsVersion project.ext.myBuildToolsVersion
 
     defaultConfig {
@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:design:${project.ext.mySupportLibraryVersion}"
     compile "com.android.support:recyclerview-v7:${project.ext.mySupportLibraryVersion}"

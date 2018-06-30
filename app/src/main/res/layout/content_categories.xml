@@ -1,0 +1,67 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    app:srcCompat="@drawable/ic_happy"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/imageLoading"
+                    android:visibility="visible"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+
+                    android:id="@+id/textLoading"
+                    android:textColor="@color/textHint"
+                    android:textStyle="italic"
+
+                    android:padding="10dp"
+                    android:visibility="visible"
+                    android:layout_below="@+id/imageLoading" />
+                <Button
+                    style="@style/Base.Widget.AppCompat.Button.Colored"
+                    android:id="@+id/btn_try"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try Again"
+                    android:visibility="gone"
+
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
